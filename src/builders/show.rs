@@ -16,6 +16,8 @@ use std::collections::HashMap;
 
 use kuchiki::traits::TendrilSink;
 
+use chrono::prelude::*;
+
 #[derive(Clone)]
 pub struct Show { }
 
@@ -99,13 +101,17 @@ fn reply_items_handler((index,item_data): (usize, &::models::thread::ItemData)) 
 
     vec = recursive(content_elm.as_node());
 
+    let dt: DateTime<Local> = Local.timestamp(item_data.reply_time as i64, 0);
+
+    let dt_str = dt.format("%d/%m/%Y %H:%M").to_string();
+
     Ok(
         ShowReplyItem {
             userid: Default::default(),
             username: item_data.user_nickname.clone(),
             content: item_data.msg.clone(),
             body: vec,
-            published_at: Default::default(),
+            published_at: dt_str
         }
     )
 }
