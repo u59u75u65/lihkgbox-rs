@@ -36,3 +36,7 @@ path = "src/examples/thread_latest_api.rs"
 [[bin]]
 name = "thread-api"
 path = "src/examples/thread_api.rs"
+
+[[bin]]
+name = "html-parse"
+path = "src/examples/html_parse.rs"
