@@ -22,7 +22,7 @@ pub struct Show {
 impl Show {
     pub fn new (icon_collection: Box<Vec<IconItem>>) -> Self {
         Show {
-            title: String::from("高登"),
+            title: String::from("連登"),
             scroll_y: 0,
             y: 0,
             replier_max_width: 14,
