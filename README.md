@@ -1,10 +1,10 @@
-# hkgbox-rs
-A hkgolden shell client, written in rust
+# lihkgbox-rs
+A lihkg.com shell client, written in rust
 
-![alt overview](https://github.com/u59u75u65/hkgbox-rs/blob/master/overview.gif?raw=true)
+![alt overview](https://github.com/u59u75u65/lihkgbox-rs/blob/master/overview.gif?raw=true)
 
 download executable binaries:
-* [v1.0.1](https://github.com/u59u75u65/hkgbox-rs/releases/tag/v1.0.1)
+* [v1.0.0](https://github.com/u59u75u65/lihkgbox-rs/releases/tag/v1.0.0)
 
 ## Usage
 
@@ -27,5 +27,5 @@ You will need:
 * Iterm 2 v3 or later (With Shell Integration installed)
   
 ## Author
-[u59u75u65](http://forum1.hkgolden.com/ProfilePage.aspx?userid=138229)
+[u59u75u65](https://lihkg.com/profile/5805)
 
