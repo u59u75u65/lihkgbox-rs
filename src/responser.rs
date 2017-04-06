@@ -1,5 +1,6 @@
 use std::sync::mpsc::Sender;
 use ::kuchiki::traits::*;
+use rustc_serialize::json;
 
 use status::*;
 use state_manager::*;
@@ -18,7 +19,12 @@ impl Responser {
                     Some(o) => {
                         match o {
                             ChannelItemType::Show(extra) => {
-                                let document = ::kuchiki::parse_html().from_utf8().one(item.result.as_bytes());
+
+                                debug!("{:?}",item.result);
+                                let document: ::models::thread::Result = json::decode(&item.result).expect("fail parse html as json");
+                                debug!("{:?}",document);
+
+                                app.status_bar.append(&app.screen_manager, &"[IPOK]");
 
                                 let posturl = get_posturl(&extra.postid, extra.page);
 
