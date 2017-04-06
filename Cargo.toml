@@ -27,3 +27,12 @@ libc = "0.2.8"
 [[bin]]
 name = "hkg"
 path = "src/main.rs"
+
+[[bin]]
+name = "thread-latest-api"
+path = "src/examples/thread_latest_api.rs"
+
+
+[[bin]]
+name = "thread-api"
+path = "src/examples/thread_api.rs"
