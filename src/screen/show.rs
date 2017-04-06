@@ -151,30 +151,32 @@ impl Show {
                 }
                 NodeType::Image(n) => {
                     if n.data != "" {
-                        if self.can_print() {
-                            if n.alt == "hkgmoji" {
-                                match self.get_icon_reference(&n.data) {
-                                    // ICON
-                                    Some(icon_reference) => line = format!("{}{}", line, imgcat_from_path(&icon_reference, icon_width)),
-                                    None => { line = format!("{}[x]", line); }
-                                }
-                            } else {
-                                if self.can_still_print(img_offset + text_y_offset + img_height) {
+                        if n.alt == "hkgmoji" {
+                            match self.get_icon_reference(&n.data) {
+                                // ICON
+                                Some(icon_reference) => line = format!("{}{}", line, imgcat_from_path(&icon_reference, icon_width)),
+                                None => { line = format!("{}[x]", line); }
+                            }
+                        } else {
+                            if self.can_still_print(img_offset + text_y_offset + img_height) {
+                                if self.can_print() {
                                     match imgcat_from_url(&n.data, img_height) {
                                         Ok(img) => {
-                                            img_offset += img_height;
-                                            line = format!("{}\n\r {}{}", line, padding, img);
+                                                img_offset += img_height;
+                                                line = format!("{}\n\r {}{}", line, padding, img);
                                         }
                                         Err(e) => {
-                                            img_offset += 1;
+                                            img_offset += img_height;
                                             line = format!("{}\n\r {}[x]", line, padding);
                                         }
                                     }
-
                                 } else {
-                                    img_offset += 1;
-                                    line = format!("{}\n\r {}[-]", line, padding);
+                                    img_offset += 2;
+                                    line = format!("{}\n\r", line);
                                 }
+                            } else {
+                                img_offset += img_height;
+                                line = format!("{}\n\r {}[-]", line, padding);
                             }
                         }
                     }
@@ -335,7 +337,7 @@ impl Show {
 
     fn can_still_print(&self, i: usize) -> bool {
         // info!("[can_still_print] y: {} lower bound: {} upper bound: {}", self.y + i , self.scroll_y, self.scroll_y + self.body_height());
-        self.y + i > self.scroll_y && self.y + i < self.scroll_y + self.body_height()
+        self.y + i >= self.scroll_y && self.y + i <= self.scroll_y + self.body_height()
     }
 
     fn scrolled_y(&self) -> usize {
