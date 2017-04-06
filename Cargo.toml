@@ -25,7 +25,7 @@ git = "https://github.com/servo/rust-url"
 libc = "0.2.8"
 
 [[bin]]
-name = "hkg"
+name = "lihkg"
 path = "src/main.rs"
 
 [[bin]]

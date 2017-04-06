@@ -12,7 +12,7 @@ pub struct Index {
 impl Index {
     pub fn new() -> Self {
         Index {
-            title: String::from("高登"),
+            title: String::from("連登"),
             selected_topic_index: 0,
         }
     }
