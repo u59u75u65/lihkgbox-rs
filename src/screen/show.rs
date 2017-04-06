@@ -156,42 +156,24 @@ impl Show {
                                 match self.get_icon_reference(&n.data) {
                                     // ICON
                                     Some(icon_reference) => line = format!("{}{}", line, imgcat_from_path(&icon_reference, icon_width)),
-                                    // URL IMAGE
-                                    None => {
-                                        if self.can_still_print(img_offset + text_y_offset + img_height) {
-                                            match imgcat_from_url(&n.data, img_height) {
-                                                Ok(img) => {
-                                                    img_offset += img_height;
-                                                    line = format!("{}{}", line, img);
-                                                }
-                                                Err(e) => {
-                                                    img_offset += 1;
-                                                    line = format!("{}\n[x]", line);
-                                                }
-                                            }
-
-                                        } else {
-                                            img_offset += 1;
-                                            line = format!("{}\n[-]", line);
-                                        }
-                                    }
+                                    None => { line = format!("{}[x]", line); }
                                 }
                             } else {
                                 if self.can_still_print(img_offset + text_y_offset + img_height) {
                                     match imgcat_from_url(&n.data, img_height) {
                                         Ok(img) => {
                                             img_offset += img_height;
-                                            line = format!("{}{}", line, img);
+                                            line = format!("{}\n\r {}{}", line, padding, img);
                                         }
                                         Err(e) => {
                                             img_offset += 1;
-                                            line = format!("{}\n[x]", line);
+                                            line = format!("{}\n\r {}[x]", line, padding);
                                         }
                                     }
 
                                 } else {
                                     img_offset += 1;
-                                    line = format!("{}\n[-]", line);
+                                    line = format!("{}\n\r {}[-]", line, padding);
                                 }
                             }
                         }
