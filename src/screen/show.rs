@@ -376,7 +376,7 @@ fn make_separator_content(reply: &ShowReplyItem) -> (String, String) {
         Ok(v) => v,
         Err(e) => now,
     };
-    let time = published_at_format(&(now - published_at_dt));
+    let time = published_at_format(&now.signed_duration_since(published_at_dt));
     (replier_name, time)
 }
 
