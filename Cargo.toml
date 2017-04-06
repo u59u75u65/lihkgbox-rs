@@ -40,3 +40,7 @@ path = "src/examples/thread_api.rs"
 [[bin]]
 name = "html-parse"
 path = "src/examples/html_parse.rs"
+
+[[bin]]
+name = "unix-time"
+path = "src/examples/unix_time.rs"
