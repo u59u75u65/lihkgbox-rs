@@ -418,7 +418,7 @@ fn make_separator_replier_name(separator_width: usize,
                                replier_name: &str)
                                -> String {
     let replier_name_len = jks_len(&replier_name);
-    let replier_name_spacing_width = replier_max_width - replier_name_len;
+    let replier_name_spacing_width = if replier_name_len <= replier_max_width { replier_max_width - replier_name_len } else { replier_max_width };
     let is_replier_name_spacing_width_odd = replier_name_spacing_width & 1 == 1;
     let replier_name_right_spacing_width = replier_name_spacing_width / 2;
     let replier_name_left_spacing_width = if is_replier_name_spacing_width_odd {
