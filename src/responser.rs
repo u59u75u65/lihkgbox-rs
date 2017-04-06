@@ -44,7 +44,7 @@ impl Responser {
                                                         let node2 = node.clone();
                                                         match *node2 {
                                                             ::reply_model::NodeType::Image(ref n) => {
-                                                                (n.data.starts_with("http") || n.data.starts_with("https")) && n.alt.starts_with("[img]") && n.alt.ends_with("[/img]")
+                                                                (n.data.starts_with("http") || n.data.starts_with("https"))
                                                             }
                                                             _ => false,
                                                         }

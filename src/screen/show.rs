@@ -152,8 +152,8 @@ impl Show {
                 NodeType::Image(n) => {
                     if n.data != "" {
                         if self.can_print() {
-                            if n.alt != "" {
-                                match self.get_icon_reference(&n.alt) {
+                            if n.alt == "hkgmoji" {
+                                match self.get_icon_reference(&n.data) {
                                     // ICON
                                     Some(icon_reference) => line = format!("{}{}", line, imgcat_from_path(&icon_reference, icon_width)),
                                     // URL IMAGE
@@ -177,7 +177,22 @@ impl Show {
                                     }
                                 }
                             } else {
-                                line = format!("{}{}", line, format!("[{}]", n.data));
+                                if self.can_still_print(img_offset + text_y_offset + img_height) {
+                                    match imgcat_from_url(&n.data, img_height) {
+                                        Ok(img) => {
+                                            img_offset += img_height;
+                                            line = format!("{}{}", line, img);
+                                        }
+                                        Err(e) => {
+                                            img_offset += 1;
+                                            line = format!("{}\n[x]", line);
+                                        }
+                                    }
+
+                                } else {
+                                    img_offset += 1;
+                                    line = format!("{}\n[-]", line);
+                                }
                             }
                         }
                     }
@@ -237,8 +252,9 @@ impl Show {
         }
     }
 
-    fn get_icon_reference(&mut self, alt: &str) -> Option<String> {
-        match self.icon_collection.iter().find(|icon_item| icon_item.alt.contains(&alt) ) {
+    fn get_icon_reference(&mut self, url: &str) -> Option<String> {
+        let s: String = url.to_string();
+        match self.icon_collection.iter().find(|icon_item| s.contains(&icon_item.src) ) {
             Some(item) => Some(format!("data/icon/{}", &item.src)),
             None => None
         }
