@@ -14,7 +14,7 @@ impl<'a, T: 'a + Cache> IndexResource<'a, T> {
         IndexResource {
             wr: wr,
             cache: cache,
-            url: "http://archive.hkgolden.com/topics.aspx?type=BW"
+            url: "https://lihkg.com/api_v1_1/thread/latest?cat_id=1&page=1&count=50"
         }
     }
 }

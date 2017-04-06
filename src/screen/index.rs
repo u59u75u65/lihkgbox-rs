@@ -12,7 +12,7 @@ pub struct Index {
 impl Index {
     pub fn new() -> Self {
         Index {
-            title: String::from("高登"),
+            title: String::from("連登"),
             selected_topic_index: 0,
         }
     }
@@ -130,7 +130,8 @@ fn print_body(stdout: &mut ::termion::raw::RawTerminal<std::io::StdoutLock>,
         let title_spacing = (0..title_spacing_width).map(|_| " ").collect::<Vec<_>>().join("");
 
         let author = item.author.name.clone();
-        let author_spacing_width = author_max_width - jks_len(&author) + right_offset;
+        let author_len = jks_len(&author);
+        let author_spacing_width = if author_len <= author_max_width { author_max_width - author_len + right_offset } else { author_max_width + right_offset };
         let author_spacing = (0..author_spacing_width).map(|_| " ").collect::<Vec<_>>().join("");
 
         if selected_topic_index == i + 1 {

@@ -22,7 +22,7 @@ pub struct Show {
 impl Show {
     pub fn new (icon_collection: Box<Vec<IconItem>>) -> Self {
         Show {
-            title: String::from("高登"),
+            title: String::from("連登"),
             scroll_y: 0,
             y: 0,
             replier_max_width: 14,
@@ -152,32 +152,29 @@ impl Show {
                 NodeType::Image(n) => {
                     if n.data != "" {
                         if self.can_print() {
-                            if n.alt != "" {
-                                match self.get_icon_reference(&n.alt) {
+                            if n.alt == "hkgmoji" {
+                                match self.get_icon_reference(&n.data) {
                                     // ICON
                                     Some(icon_reference) => line = format!("{}{}", line, imgcat_from_path(&icon_reference, icon_width)),
-                                    // URL IMAGE
-                                    None => {
-                                        if self.can_still_print(img_offset + text_y_offset + img_height) {
-                                            match imgcat_from_url(&n.data, img_height) {
-                                                Ok(img) => {
-                                                    img_offset += img_height;
-                                                    line = format!("{}{}", line, img);
-                                                }
-                                                Err(e) => {
-                                                    img_offset += 1;
-                                                    line = format!("{}\n[x]", line);
-                                                }
-                                            }
-
-                                        } else {
-                                            img_offset += 1;
-                                            line = format!("{}\n[-]", line);
-                                        }
-                                    }
+                                    None => { line = format!("{}[x]", line); }
                                 }
                             } else {
-                                line = format!("{}{}", line, format!("[{}]", n.data));
+                                if self.can_still_print(img_offset + text_y_offset + img_height) {
+                                    match imgcat_from_url(&n.data, img_height) {
+                                        Ok(img) => {
+                                            img_offset += img_height;
+                                            line = format!("{}\n\r {}{}", line, padding, img);
+                                        }
+                                        Err(e) => {
+                                            img_offset += 1;
+                                            line = format!("{}\n\r {}[x]", line, padding);
+                                        }
+                                    }
+
+                                } else {
+                                    img_offset += 1;
+                                    line = format!("{}\n\r {}[-]", line, padding);
+                                }
                             }
                         }
                     }
@@ -237,8 +234,9 @@ impl Show {
         }
     }
 
-    fn get_icon_reference(&mut self, alt: &str) -> Option<String> {
-        match self.icon_collection.iter().find(|icon_item| icon_item.alt.contains(&alt) ) {
+    fn get_icon_reference(&mut self, url: &str) -> Option<String> {
+        let s: String = url.to_string();
+        match self.icon_collection.iter().find(|icon_item| s.contains(&icon_item.src) ) {
             Some(item) => Some(format!("data/icon/{}", &item.src)),
             None => None
         }
@@ -360,7 +358,7 @@ fn make_separator_content(reply: &ShowReplyItem) -> (String, String) {
         Ok(v) => v,
         Err(e) => now,
     };
-    let time = published_at_format(&(now - published_at_dt));
+    let time = published_at_format(&now.signed_duration_since(published_at_dt));
     (replier_name, time)
 }
 
@@ -418,7 +416,7 @@ fn make_separator_replier_name(separator_width: usize,
                                replier_name: &str)
                                -> String {
     let replier_name_len = jks_len(&replier_name);
-    let replier_name_spacing_width = replier_max_width - replier_name_len;
+    let replier_name_spacing_width = if replier_name_len <= replier_max_width { replier_max_width - replier_name_len } else { replier_max_width };
     let is_replier_name_spacing_width_odd = replier_name_spacing_width & 1 == 1;
     let replier_name_right_spacing_width = replier_name_spacing_width / 2;
     let replier_name_left_spacing_width = if is_replier_name_spacing_width_odd {

@@ -1,5 +1,6 @@
 use std::sync::mpsc::Sender;
 use ::kuchiki::traits::*;
+use rustc_serialize::json;
 
 use status::*;
 use state_manager::*;
@@ -18,7 +19,12 @@ impl Responser {
                     Some(o) => {
                         match o {
                             ChannelItemType::Show(extra) => {
-                                let document = ::kuchiki::parse_html().from_utf8().one(item.result.as_bytes());
+
+                                debug!("{:?}",item.result);
+                                let document: ::models::thread::Result = json::decode(&item.result).expect("fail parse html as json");
+                                debug!("{:?}",document);
+
+                                app.status_bar.append(&app.screen_manager, &"[IPOK]");
 
                                 let posturl = get_posturl(&extra.postid, extra.page);
 
@@ -38,7 +44,7 @@ impl Responser {
                                                         let node2 = node.clone();
                                                         match *node2 {
                                                             ::reply_model::NodeType::Image(ref n) => {
-                                                                (n.data.starts_with("http") || n.data.starts_with("https")) && n.alt.starts_with("[img]") && n.alt.ends_with("[/img]")
+                                                                (n.data.starts_with("http") || n.data.starts_with("https"))
                                                             }
                                                             _ => false,
                                                         }
@@ -75,7 +81,12 @@ impl Responser {
                                 app.state_manager.set_web_request(false); // is_web_requesting = false;
                             }
                             ChannelItemType::Index(_) => {
-                                let document = ::kuchiki::parse_html().from_utf8().one(item.result.as_bytes());
+
+                                debug!("{:?}",item.result);
+                                let document: ::models::topic::Result = json::decode(&item.result).expect("fail parse html as json");
+                                debug!("{:?}",document);
+
+                                app.status_bar.append(&app.screen_manager, &"[IPOK]");
 
                                 app.list_topic_items.clear();
 
@@ -120,9 +131,7 @@ impl Responser {
 }
 
 fn get_posturl(postid: &String, page: usize) -> String {
-    let base_url = "http://forum1.hkgolden.com/view.aspx";
-    let posturl = format!("{base_url}?type=BW&message={postid}&page={page}",
-                          base_url = base_url,
+    let posturl = format!("https://lihkg.com/api_v1_1/thread/{postid}/page/{page}",
                           postid = postid,
                           page = page);
     posturl
