@@ -81,7 +81,12 @@ impl Responser {
                                 app.state_manager.set_web_request(false); // is_web_requesting = false;
                             }
                             ChannelItemType::Index(_) => {
-                                let document = ::kuchiki::parse_html().from_utf8().one(item.result.as_bytes());
+
+                                debug!("{:?}",item.result);
+                                let document: ::models::topic::Result = json::decode(&item.result).expect("fail parse html as json");
+                                debug!("{:?}",document);
+
+                                app.status_bar.append(&app.screen_manager, &"[IPOK]");
 
                                 app.list_topic_items.clear();
 
@@ -126,9 +131,7 @@ impl Responser {
 }
 
 fn get_posturl(postid: &String, page: usize) -> String {
-    let base_url = "http://forum1.hkgolden.com/view.aspx";
-    let posturl = format!("{base_url}?type=BW&message={postid}&page={page}",
-                          base_url = base_url,
+    let posturl = format!("https://lihkg.com/api_v1_1/thread/{postid}/page/{page}",
                           postid = postid,
                           page = page);
     posturl
