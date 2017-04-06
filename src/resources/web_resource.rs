@@ -1,5 +1,7 @@
 use std::io::Read;
 use ::hyper::Client;
+use ::hyper::net::HttpsConnector;
+use ::hyper_native_tls::NativeTlsClient;
 
 use std::collections::HashMap;
 use std::io::{Error, ErrorKind};
@@ -14,9 +16,12 @@ pub struct WebResource {
 impl WebResource {
 
     pub fn new() -> Self {
+        let ssl = NativeTlsClient::new().unwrap();
+        let connector = HttpsConnector::new(ssl);
+        let mut client = Client::with_connector(connector);
         WebResource {
             pages: HashMap::new(),
-            client: Client::new(),
+            client: client,
         }
     }
 
@@ -36,10 +41,7 @@ impl WebResource {
         info!("web resource #fetch");
         let mut headers = Headers::new();
         headers.set(UserAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36".to_owned()));
-        let mut client = Client::new();
-        client.set_read_timeout(Some(::std::time::Duration::from_secs(5)));
-        client.set_write_timeout(Some(::std::time::Duration::from_secs(5)));
-        match client.get(url).headers(headers).send() {
+        match self.client.get(url).headers(headers).send() {
             Ok(mut resp) => {
                 let mut s = String::new();
                 match resp.read_to_string(&mut s) {
