@@ -30,7 +30,8 @@ use std::thread;
 
 fn main() {
 
-    // Initialize
+    /* -- Initialize --------------------------------------------------------------- */
+
     log4rs::init_file("config/log4rs.yaml", Default::default()).expect("fail to init log4rs");
 
     info!("app start");
@@ -40,14 +41,17 @@ fn main() {
 
     let _stdout = stdout();
 
-    // web background services
+    // prepare channels for communicating between threads
     let (tx_req, rx_req) = channel::<ChannelItem>();
     let (tx_res, rx_res) = channel::<ChannelItem>();
-
     let (tx_state, rx_state) = channel::<(Status,Status)>();
+    let (tx_in, rx_in) = channel::<::termion::event::Key>();
 
     let working = Arc::new(AtomicBool::new(true));
     let control = Arc::downgrade(&working);
+
+    let working1 = working.clone();
+    let working2 = working.clone();
 
     let mut app = {
 
@@ -89,15 +93,11 @@ fn main() {
     let mut index_control = hkg::control::index::Index::new();
     let mut show_control = hkg::control::show::Show::new();
 
+/* -- start --------------------------------------------------------------- */
+
     // topics request
     let status_message = list_page(&mut app.state_manager, &tx_req);
     app.status_bar.append(&app.screen_manager, &status_message);
-
-
-    let (tx_in, rx_in) = channel::<::termion::event::Key>();
-
-    let working1 = working.clone();
-    let working2 = working.clone();
 
     thread::spawn(move || {
         while (*working1).load(Ordering::Relaxed) {
