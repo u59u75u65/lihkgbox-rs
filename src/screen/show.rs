@@ -157,7 +157,26 @@ impl Show {
                                 None => { line = format!("{}[x]", line); }
                             }
                         } else {
-                            if self.can_still_print(img_offset + text_y_offset + img_height) {
+
+                            if !line.is_empty() {
+                                if self.can_print() {
+                                    self.print_reply_line(stdout, format!(" {}{}", padding, line));
+                                }
+                                line = String::new();
+                                is_first = false;
+
+                                if text_y_offset > 0 {
+                                    self.y += text_y_offset;
+                                    text_y_offset = 0;
+                                }
+
+                                if img_offset > 0 {
+                                    self.y += img_offset;
+                                    img_offset = 0;
+                                }
+                            }
+
+                            if self.can_still_print(img_height) {
                                 if self.can_print() {
                                     match imgcat_from_url(&n.data, img_height) {
                                         Ok(img) => {
@@ -170,8 +189,8 @@ impl Show {
                                         }
                                     }
                                 } else {
-                                    img_offset += 2;
-                                    line = format!("{}\n\r", line);
+                                    img_offset += img_height;
+                                    line = format!("{}\n\r {}[-]", line, padding);
                                 }
                             } else {
                                 img_offset += img_height;
@@ -181,10 +200,8 @@ impl Show {
                     }
                 }
                 NodeType::BlockQuote(n) => {
-                    if self.can_still_print(img_offset + text_y_offset) {
-                        self.print_reply(stdout, &n.data, depth + 1);
-                        is_first = false;                
-                    }
+                    self.print_reply(stdout, &n.data, depth + 1);
+                    is_first = false;
                 }
                 NodeType::Br(n) => {
                     if !line.is_empty() {
@@ -205,7 +222,7 @@ impl Show {
                         }
                     } else {
                         // prevent first line empty + prevent empty lines in quotes
-                        if !is_first && depth == 0 {
+                        if !is_first {
                             self.y += 1;
                         }
                     }
