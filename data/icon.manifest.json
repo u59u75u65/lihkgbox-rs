@@ -1,145 +1,586 @@
 [{
-    "src": "angel.gif",
-    "alt": "O:-)"
+  "alt": "normal",
+  "src": "faces/normal/smile.gif"
 }, {
-    "src": "dead.gif",
-    "alt": "xx("
+  "alt": "big",
+  "src": "faces/big/smile.gif"
 }, {
-    "src": "smile.gif",
-    "alt": ":)"
+  "alt": "fs",
+  "src": "faces/fs/smile.gif"
 }, {
-    "src": "clown.gif",
-    "alt": ":o)"
+  "alt": "lomoji",
+  "src": "faces/lomoji/05.png"
 }, {
-    "src": "frown.gif",
-    "alt": ":-("
+  "alt": ":)",
+  "src": "faces/normal/smile.gif"
 }, {
-    "src": "cry.gif",
-    "alt": ":~("
+  "alt": "O:-)",
+  "src": "faces/normal/angel.gif"
 }, {
-    "src": "wink.gif",
-    "alt": ";-)"
+  "alt": "xx(",
+  "src": "faces/normal/dead.gif"
 }, {
-    "src": "angry.gif",
-    "alt": ":-["
+  "alt": ":o)",
+  "src": "faces/normal/clown.gif"
 }, {
-    "src": "devil.gif",
-    "alt": ":-]"
+  "alt": ":-(",
+  "src": "faces/normal/frown.gif"
 }, {
-    "src": "biggrin.gif",
-    "alt": ":D"
+  "alt": ":~(",
+  "src": "faces/normal/cry.gif"
 }, {
-    "src": "oh.gif",
-    "alt": ":O"
+  "alt": ";-)",
+  "src": "faces/normal/wink.gif"
 }, {
-    "src": "tongue.gif",
-    "alt": ":P"
+  "alt": ":-[",
+  "src": "faces/normal/angry.gif"
 }, {
-    "src": "kiss.gif",
-    "alt": "^3^"
+  "alt": ":-]",
+  "src": "faces/normal/devil.gif"
 }, {
-    "src": "wonder.gif",
-    "alt": "?_?"
+  "alt": ":D",
+  "src": "faces/normal/biggrin.gif"
 }, {
-    "src": "agree.gif",
-    "alt": "#yup#"
+  "alt": ":O",
+  "src": "faces/normal/oh.gif"
 }, {
-    "src": "donno.gif",
-    "alt": "#ng#"
+  "alt": ":P",
+  "src": "faces/normal/tongue.gif"
 }, {
-    "src": "hehe.gif",
-    "alt": "#hehe#"
+  "alt": "^3^",
+  "src": "faces/normal/kiss.gif"
 }, {
-    "src": "love.gif",
-    "alt": "#love#"
+  "alt": "?_?",
+  "src": "faces/normal/wonder.gif"
 }, {
-    "src": "surprise.gif",
-    "alt": "#oh#"
+  "alt": "#yup#",
+  "src": "faces/normal/agree.gif"
 }, {
-    "src": "chicken.gif",
-    "alt": "#cn#"
+  "alt": "#ng#",
+  "src": "faces/normal/donno.gif"
 }, {
-    "src": "ass.gif",
-    "alt": "#ass#"
+  "alt": "#hehe#",
+  "src": "faces/normal/hehe.gif"
 }, {
-    "src": "sosad.gif",
-    "alt": "[sosad]"
+  "alt": "#love#",
+  "src": "faces/normal/love.gif"
 }, {
-    "src": "good.gif",
-    "alt": "#good#"
+  "alt": "#oh#",
+  "src": "faces/normal/surprise.gif"
 }, {
-    "src": "hoho.gif",
-    "alt": "#hoho#"
+  "alt": "#cn#",
+  "src": "faces/normal/chicken.gif"
 }, {
-    "src": "kill.gif",
-    "alt": "#kill#"
+  "alt": "#ass#",
+  "src": "faces/normal/ass.gif"
 }, {
-    "src": "bye.gif",
-    "alt": "#bye#"
+  "alt": "[sosad]",
+  "src": "faces/normal/sosad.gif"
 }, {
-    "src": "z.gif",
-    "alt": "Z_Z"
+  "alt": "#good#",
+  "src": "faces/normal/good.gif"
 }, {
-    "src": "@.gif",
-    "alt": "@_@"
+  "alt": "#hoho#",
+  "src": "faces/normal/hoho.gif"
 }, {
-    "src": "adore.gif",
-    "alt": "#adore#"
+  "alt": "#kill#",
+  "src": "faces/normal/kill.gif"
 }, {
-    "src": "wonder2.gif",
-    "alt": "???"
+  "alt": "#bye#",
+  "src": "faces/normal/bye.gif"
 }, {
-    "src": "banghead.gif",
-    "alt": "[banghead]"
+  "alt": "Z_Z",
+  "src": "faces/normal/z.gif"
 }, {
-    "src": "bouncer.gif",
-    "alt": "[bouncer]"
+  "alt": "@_@",
+  "src": "faces/normal/@.gif"
 }, {
-    "src": "bouncy.gif",
-    "alt": "[bouncy]"
+  "alt": "#adore#",
+  "src": "faces/normal/adore.gif"
 }, {
-    "src": "offtopic.gif",
-    "alt": "[offtopic]"
+  "alt": "#???#",
+  "src": "faces/normal/wonder2.gif"
 }, {
-    "src": "censored.gif",
-    "alt": "[censored]"
+  "alt": "[banghead]",
+  "src": "faces/normal/banghead.gif"
 }, {
-    "src": "flowerface.gif",
-    "alt": "[flowerface]"
+  "alt": "[bouncer]",
+  "src": "faces/normal/bouncer.gif"
 }, {
-    "src": "shocking.gif",
-    "alt": "[shocking]"
+  "alt": "[bouncy]",
+  "src": "faces/normal/bouncy.gif"
 }, {
-    "src": "photo.gif",
-    "alt": "[photo]"
+  "alt": "[offtopic]",
+  "src": "faces/normal/offtopic.gif"
 }, {
-    "src": "fire.gif",
-    "alt": "#fire#"
+  "alt": "[censored]",
+  "src": "faces/normal/censored.gif"
 }, {
-    "src": "yipes.gif",
-    "alt": "[yipes]"
+  "alt": "[flowerface]",
+  "src": "faces/normal/flowerface.gif"
 }, {
-    "src": "369.gif",
-    "alt": "[369]"
+  "alt": "[shocking]",
+  "src": "faces/normal/shocking.gif"
 }, {
-    "src": "bomb.gif",
-    "alt": "[bomb]"
+  "alt": "[photo]",
+  "src": "faces/normal/photo.gif"
 }, {
-    "src": "slick.gif",
-    "alt": "[slick]"
+  "alt": "#fire#",
+  "src": "faces/normal/fire.gif"
 }, {
-    "src": "fuck.gif",
-    "alt": "fuck"
+  "alt": "[yipes]",
+  "src": "faces/normal/yipes.gif"
 }, {
-    "src": "no.gif",
-    "alt": "#no#"
+  "alt": "[369]",
+  "src": "faces/normal/369.gif"
 }, {
-    "src": "kill2.gif",
-    "alt": "#kill2#"
+  "alt": "[bomb]",
+  "src": "faces/normal/bomb.gif"
 }, {
-    "src" : "ThumbUp.gif",
-    "alt" : "#good2#"
+  "alt": "[slick]",
+  "src": "faces/normal/slick.gif"
 }, {
-    "src" : "ThumbDown.gif",
-    "alt" : "#bad#"
+  "alt": "#fuck#",
+  "src": "faces/normal/fuck.gif"
+}, {
+  "alt": "#no#",
+  "src": "faces/normal/no.gif"
+}, {
+  "alt": "#kill2#",
+  "src": "faces/normal/kill2.gif"
+}, {
+  "alt": "#dislike#",
+  "src": "faces/normal/dislike.gif"
+}, {
+  "alt": "#like#",
+  "src": "faces/normal/like.gif"
+}, {
+  "alt": "#:)#b",
+  "src": "faces/big/smile.gif"
+}, {
+  "alt": "#O:-)#b",
+  "src": "faces/big/angel.gif"
+}, {
+  "alt": "#xx(#b",
+  "src": "faces/big/dead.gif"
+}, {
+  "alt": "#:o)#b",
+  "src": "faces/big/clown.gif"
+}, {
+  "alt": "#:-(#b",
+  "src": "faces/big/frown.gif"
+}, {
+  "alt": "#:~(#b",
+  "src": "faces/big/cry.gif"
+}, {
+  "alt": "#;-)#b",
+  "src": "faces/big/wink.gif"
+}, {
+  "alt": "#:-[#b",
+  "src": "faces/big/angry.gif"
+}, {
+  "alt": "#:-]#b",
+  "src": "faces/big/devil.gif"
+}, {
+  "alt": "#:D#b",
+  "src": "faces/big/biggrin.gif"
+}, {
+  "alt": "#:O#b",
+  "src": "faces/big/oh.gif"
+}, {
+  "alt": "#:P#b",
+  "src": "faces/big/tongue.gif"
+}, {
+  "alt": "#^3^#b",
+  "src": "faces/big/kiss.gif"
+}, {
+  "alt": "#?_?#b",
+  "src": "faces/big/wonder.gif"
+}, {
+  "alt": "#yup#b",
+  "src": "faces/big/agree.gif"
+}, {
+  "alt": "#ng#b",
+  "src": "faces/big/donno.gif"
+}, {
+  "alt": "#hehe#b",
+  "src": "faces/big/hehe.gif"
+}, {
+  "alt": "#love#b",
+  "src": "faces/big/love.gif"
+}, {
+  "alt": "#oh#b",
+  "src": "faces/big/surprise.gif"
+}, {
+  "alt": "#cn#b",
+  "src": "faces/big/chicken.gif"
+}, {
+  "alt": "#ass#b",
+  "src": "faces/big/ass.gif"
+}, {
+  "alt": "#[sosad]#b",
+  "src": "faces/big/sosad.gif"
+}, {
+  "alt": "#good#b",
+  "src": "faces/big/good.gif"
+}, {
+  "alt": "#hoho#b",
+  "src": "faces/big/hoho.gif"
+}, {
+  "alt": "#kill#b",
+  "src": "faces/big/kill.gif"
+}, {
+  "alt": "#bye#b",
+  "src": "faces/big/bye.gif"
+}, {
+  "alt": "#Z_Z#b",
+  "src": "faces/big/z.gif"
+}, {
+  "alt": "#@_@#b",
+  "src": "faces/big/@.gif"
+}, {
+  "alt": "#adore#b",
+  "src": "faces/big/adore.gif"
+}, {
+  "alt": "#???#b",
+  "src": "faces/big/wonder2.gif"
+}, {
+  "alt": "#[banghead]#b",
+  "src": "faces/big/banghead.gif"
+}, {
+  "alt": "#[bouncer]#b",
+  "src": "faces/big/bouncer.gif"
+}, {
+  "alt": "#[bouncy]#b",
+  "src": "faces/big/bouncy.gif"
+}, {
+  "alt": "#[offtopic]#b",
+  "src": "faces/big/offtopic.gif"
+}, {
+  "alt": "#[censored]#b",
+  "src": "faces/big/censored.gif"
+}, {
+  "alt": "#[flowerface]#b",
+  "src": "faces/big/flowerface.gif"
+}, {
+  "alt": "#[shocking]#b",
+  "src": "faces/big/shocking.gif"
+}, {
+  "alt": "#[photo]#b",
+  "src": "faces/big/photo.gif"
+}, {
+  "alt": "#fire#b",
+  "src": "faces/big/fire.gif"
+}, {
+  "alt": "#[yipes]#b",
+  "src": "faces/big/yipes.gif"
+}, {
+  "alt": "#[369]#b",
+  "src": "faces/big/369.gif"
+}, {
+  "alt": "#[bomb]#b",
+  "src": "faces/big/bomb.gif"
+}, {
+  "alt": "#[slick]#b",
+  "src": "faces/big/slick.gif"
+}, {
+  "alt": "#fuck#b",
+  "src": "faces/big/fuck.gif"
+}, {
+  "alt": "#no#b",
+  "src": "faces/big/no.gif"
+}, {
+  "alt": "#kill2#b",
+  "src": "faces/big/kill2.gif"
+}, {
+  "alt": "#like#b",
+  "src": "faces/big/like.gif"
+}, {
+  "alt": "#dislike#b",
+  "src": "faces/big/dislike.gif"
+}, {
+  "alt": "#yup#lm#b",
+  "src": "faces/big/lomore_agree.gif"
+}, {
+  "alt": "#bouncer#lm#b",
+  "src": "faces/big/lomore_bouncer.gif"
+}, {
+  "alt": "#bye#lm#b",
+  "src": "faces/big/lomore_bye.gif"
+}, {
+  "alt": "#shocking#lm#b",
+  "src": "faces/big/lomore_shocking.gif"
+}, {
+  "alt": "#:)#fs",
+  "src": "faces/fs/smile.gif"
+}, {
+  "alt": "#O:-)#fs",
+  "src": "faces/fs/angel.gif"
+}, {
+  "alt": "#xx(#fs",
+  "src": "faces/fs/dead.gif"
+}, {
+  "alt": "#:o)#fs",
+  "src": "faces/fs/clown.gif"
+}, {
+  "alt": "#;-)#fs",
+  "src": "faces/fs/wink.gif"
+}, {
+  "alt": "#:-[#fs",
+  "src": "faces/fs/angry.gif"
+}, {
+  "alt": "#:-]#fs",
+  "src": "faces/fs/devil.gif"
+}, {
+  "alt": "#:D#fs",
+  "src": "faces/fs/biggrin.gif"
+}, {
+  "alt": "#:O#fs",
+  "src": "faces/fs/oh.gif"
+}, {
+  "alt": "#:P#fs",
+  "src": "faces/fs/tongue.gif"
+}, {
+  "alt": "#^3^#fs",
+  "src": "faces/fs/kiss.gif"
+}, {
+  "alt": "#?_?#fs",
+  "src": "faces/fs/wonder.gif"
+}, {
+  "alt": "#yup#fs",
+  "src": "faces/fs/agree.gif"
+}, {
+  "alt": "#love#fs",
+  "src": "faces/fs/love.gif"
+}, {
+  "alt": "#cn#fs",
+  "src": "faces/fs/chicken.gif"
+}, {
+  "alt": "#[sosad]#fs",
+  "src": "faces/fs/sosad.gif"
+}, {
+  "alt": "#good#fs",
+  "src": "faces/fs/good.gif"
+}, {
+  "alt": "#hoho#fs",
+  "src": "faces/fs/hoho.gif"
+}, {
+  "alt": "#kill#fs",
+  "src": "faces/fs/kill.gif"
+}, {
+  "alt": "#bye#fs",
+  "src": "faces/fs/bye.gif"
+}, {
+  "alt": "#adore#fs",
+  "src": "faces/fs/adore.gif"
+}, {
+  "alt": "#???#fs",
+  "src": "faces/fs/wonder2.gif"
+}, {
+  "alt": "#[bouncer]#fs",
+  "src": "faces/fs/bouncer.gif"
+}, {
+  "alt": "#[bouncy]#fs",
+  "src": "faces/fs/bouncy.gif"
+}, {
+  "alt": "#[offtopic]#fs",
+  "src": "faces/fs/offtopic.gif"
+}, {
+  "alt": "#[censored]#fs",
+  "src": "faces/fs/censored.gif"
+}, {
+  "alt": "#[flowerface]#fs",
+  "src": "faces/fs/flowerface.gif"
+}, {
+  "alt": "#[shocking]#fs",
+  "src": "faces/fs/shocking.gif"
+}, {
+  "alt": "#[369]#fs",
+  "src": "faces/fs/369.gif"
+}, {
+  "alt": "#[bomb]#fs",
+  "src": "faces/fs/bomb.gif"
+}, {
+  "alt": "#fuck#fs",
+  "src": "faces/fs/fuck.gif"
+}, {
+  "alt": "#no#fs",
+  "src": "faces/fs/no.gif"
+}, {
+  "alt": "#kill2#fs",
+  "src": "faces/fs/kill2.gif"
+}, {
+  "alt": "#battle#fs",
+  "src": "faces/fs/battle.gif"
+}, {
+  "alt": "#bear#fs",
+  "src": "faces/fs/south_bear.gif"
+}, {
+  "alt": "#die#fs",
+  "src": "faces/fs/want_die.gif"
+}, {
+  "alt": "#:)#ice#fs",
+  "src": "faces/fs/fozen_smile.gif"
+}, {
+  "alt": "#gcap#fs",
+  "src": "faces/fs/green_cap.gif"
+}, {
+  "alt": "#gcap2#fs",
+  "src": "faces/fs/green_cap_2.gif"
+}, {
+  "alt": "#gcap3#fs",
+  "src": "faces/fs/green_cap_3.gif"
+}, {
+  "alt": "#jj#fs",
+  "src": "faces/fs/jj.gif"
+}, {
+  "alt": "#hoho#lm#fs",
+  "src": "faces/fs/lomore_hoho.gif"
+}, {
+  "alt": "#kill#lm#fs",
+  "src": "faces/fs/lomore_kill.gif"
+}, {
+  "alt": "#:)#lm#fs",
+  "src": "faces/fs/lomore_smile.gif"
+}, {
+  "alt": "#poison#fs",
+  "src": "faces/fs/poison.gif"
+}, {
+  "alt": "#poke1#fs",
+  "src": "faces/fs/pokemon_1.gif"
+}, {
+  "alt": "#poke2#fs",
+  "src": "faces/fs/pokemon_2.gif"
+}, {
+  "alt": "#:)#b#fs",
+  "src": "faces/fs/smile_big.gif"
+}, {
+  "alt": "#superman#fs",
+  "src": "faces/fs/superman.gif"
+}, {
+  "alt": "#:)#lme",
+  "src": "faces/lomoji/05.png"
+}, {
+  "alt": "#mad#lme",
+  "src": "faces/lomoji/01.png"
+}, {
+  "alt": "#unamused#lme",
+  "src": "faces/lomoji/02.png"
+}, {
+  "alt": "#:-]#lme",
+  "src": "faces/lomoji/03.png"
+}, {
+  "alt": "#smirking#lme",
+  "src": "faces/lomoji/04.png"
+}, {
+  "alt": "#happy#lme",
+  "src": "faces/lomoji/06.png"
+}, {
+  "alt": "#^3^#lme",
+  "src": "faces/lomoji/07.png"
+}, {
+  "alt": "#:P#lme",
+  "src": "faces/lomoji/08.png"
+}, {
+  "alt": "#love#lme",
+  "src": "faces/lomoji/09.png"
+}, {
+  "alt": "#hoho#lme",
+  "src": "faces/lomoji/10.png"
+}, {
+  "alt": "#tongue1#lme",
+  "src": "faces/lomoji/11.png"
+}, {
+  "alt": "#tongue2#lme",
+  "src": "faces/lomoji/12.png"
+}, {
+  "alt": "#tongue3#lme",
+  "src": "faces/lomoji/13.png"
+}, {
+  "alt": "#wink#lme",
+  "src": "faces/lomoji/14.png"
+}, {
+  "alt": "#ghost#lme",
+  "src": "faces/lomoji/15.png"
+}, {
+  "alt": "#sad#lme",
+  "src": "faces/lomoji/16.png"
+}, {
+  "alt": "#sleepy#lme",
+  "src": "faces/lomoji/17.png"
+}, {
+  "alt": "#O:-)#lme",
+  "src": "faces/lomoji/18.png"
+}, {
+  "alt": "#:(#lme",
+  "src": "faces/lomoji/19.png"
+}, {
+  "alt": "#pain#lme",
+  "src": "faces/lomoji/20.png"
+}, {
+  "alt": "#tired#lme",
+  "src": "faces/lomoji/21.png"
+}, {
+  "alt": "#cry#lme",
+  "src": "faces/lomoji/22.png"
+}, {
+  "alt": "#bawling#lme",
+  "src": "faces/lomoji/23.png"
+}, {
+  "alt": "#scream#lme",
+  "src": "faces/lomoji/24.png"
+}, {
+  "alt": "#shame#lme",
+  "src": "faces/lomoji/25.png"
+}, {
+  "alt": "#think#lme",
+  "src": "faces/lomoji/26.png"
+}, {
+  "alt": "#sick#lme",
+  "src": "faces/lomoji/27.png"
+}, {
+  "alt": "#shy#lme",
+  "src": "faces/lomoji/28.png"
+}, {
+  "alt": "#devil#lme",
+  "src": "faces/lomoji/29.png"
+}, {
+  "alt": "#dizzy#lme",
+  "src": "faces/lomoji/30.png"
+}, {
+  "alt": "#scared#lme",
+  "src": "faces/lomoji/31.png"
+}, {
+  "alt": "#nervous#lme",
+  "src": "faces/lomoji/32.png"
+}, {
+  "alt": "#angry#lme",
+  "src": "faces/lomoji/33.png"
+}, {
+  "alt": "#ok#lme",
+  "src": "faces/lomoji/34.png"
+}, {
+  "alt": "#yeah#lme",
+  "src": "faces/lomoji/35.png"
+}, {
+  "alt": "#yo#lme",
+  "src": "faces/lomoji/36.png"
+}, {
+  "alt": "#sosad#lme",
+  "src": "faces/lomoji/37.png"
+}, {
+  "alt": "#addoil#lme",
+  "src": "faces/lomoji/38.png"
+}, {
+  "alt": "#wound#lme",
+  "src": "faces/lomoji/39.png"
+}, {
+  "alt": "#wfc#lme",
+  "src": "faces/lomoji/40.png"
+}, {
+  "alt": "#shock#lme",
+  "src": "faces/lomoji/41.png"
+}, {
+  "alt": "#:-)#lme",
+  "src": "faces/lomoji/42.png"
 }]
