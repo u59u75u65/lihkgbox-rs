@@ -126,7 +126,7 @@ impl Show {
 
     fn print_reply(&mut self, stdout: &mut ::termion::raw::RawTerminal<std::io::StdoutLock>, vec: &Vec<NodeType>, depth: usize) {
 
-        let padding = seq_str_gen(0, depth, "├─", "");
+        let padding = format!("{}{}", seq_str_gen(0, depth, "├─", ""), if depth == 0 { "" } else { " "} );
         let mut line = String::new();
         let mut is_first = true;
 
