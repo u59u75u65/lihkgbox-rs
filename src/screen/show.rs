@@ -184,8 +184,8 @@ impl Show {
                 NodeType::BlockQuote(n) => {
                     if self.can_still_print(img_offset + text_y_offset) {
                         self.print_reply(stdout, &n.data, depth + 1);
+                        is_first = false;                
                     }
-                    is_first = false;
                 }
                 NodeType::Br(n) => {
                     if !line.is_empty() {
@@ -204,13 +204,12 @@ impl Show {
                             self.y += img_offset;
                             img_offset = 0;
                         }
+                    } else {
+                        // prevent first line empty + prevent empty lines in quotes
+                        if !is_first && depth == 0 {
+                            self.y += 1;
+                        }
                     }
-
-                    // prevent first line empty
-                    if !is_first {
-                        self.y += 1;
-                    }
-
                 }
             }
         }
