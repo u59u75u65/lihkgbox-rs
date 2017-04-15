@@ -161,11 +161,11 @@ impl Show {
                                 if self.can_print() {
                                     match imgcat_from_url(&n.data, img_height) {
                                         Ok(img) => {
-                                                img_offset += img_height;
+                                                img_offset += img_height + 1;
                                                 line = format!("{}\n\r {}{}", line, padding, img);
                                         }
                                         Err(e) => {
-                                            img_offset += img_height;
+                                            img_offset += img_height + 1;
                                             line = format!("{}\n\r {}[x]", line, padding);
                                         }
                                     }
