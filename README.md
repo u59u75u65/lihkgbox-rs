@@ -4,7 +4,7 @@ A lihkg.com shell client, written in rust
 ![alt overview](https://github.com/u59u75u65/lihkgbox-rs/blob/master/overview.gif?raw=true)
 
 download executable binaries:
-* [v1.0.1](https://github.com/u59u75u65/lihkgbox-rs/releases/tag/v1.0.1)
+* [v1.0.2](https://github.com/u59u75u65/lihkgbox-rs/releases/tag/v1.0.2)
 
 ## Usage
 
