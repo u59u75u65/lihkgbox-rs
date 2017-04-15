@@ -148,6 +148,9 @@ impl Show {
                 NodeType::Image(n) => {
                     if n.data != "" {
                         if n.alt == "hkgmoji" {
+                            if line.is_empty() {
+                                img_offset += 1;
+                            }
                             match self.get_icon_reference(&n.data) {
                                 // ICON
                                 Some(icon_reference) => line = format!("{}{}", line, imgcat_from_path(&icon_reference, icon_width)),
