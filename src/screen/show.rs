@@ -9,12 +9,15 @@ use model::ShowItem;
 use reply_model::*;
 use screen::common::*;
 
+const title: &'static str = "連登";
+const replier_max_width: usize = 14;
+const time_max_width: usize = 5;
+const icon_width: usize = 2;
+const img_height: usize = 10;
+
 pub struct Show {
-    title: String,
     scroll_y: usize,
     y: usize,
-    replier_max_width: usize,
-    time_max_width: usize,
     is_scroll_to_end: bool,
     icon_collection: Box<Vec<IconItem>>
 }
@@ -22,19 +25,14 @@ pub struct Show {
 impl Show {
     pub fn new (icon_collection: Box<Vec<IconItem>>) -> Self {
         Show {
-            title: String::from("連登"),
             scroll_y: 0,
             y: 0,
-            replier_max_width: 14,
-            time_max_width: 5,
             is_scroll_to_end: false,
             icon_collection: icon_collection
         }
     }
     pub fn print(&mut self, stdout: &mut ::termion::raw::RawTerminal<std::io::StdoutLock>, item: &ShowItem) {
-
         self.y = 2;
-        let title = self.title.clone();
         self.print_header(stdout, &format!("{} - {} [{}/{}]",
                                    item.title,
                                    title,
@@ -128,8 +126,6 @@ impl Show {
 
     fn print_reply(&mut self, stdout: &mut ::termion::raw::RawTerminal<std::io::StdoutLock>, vec: &Vec<NodeType>, depth: usize) {
 
-        let icon_width = 2;
-        let img_height = 10;
         let padding = seq_str_gen(0, depth, "├─", "");
         let mut line = String::new();
         let mut is_first = true;
@@ -261,9 +257,7 @@ impl Show {
             self.build_separator_arguments();
         make_separator_top(separator_width,
                            &separator_padding,
-                           self.replier_max_width,
                            &replier_name,
-                           self.time_max_width,
                            &time)
     }
 
@@ -411,7 +405,6 @@ fn clean_reply_body(vec: &Vec<NodeType>) -> Vec<NodeType> {
 
 fn make_separator_replier_name(separator_width: usize,
                                separator_padding: &str,
-                               replier_max_width: usize,
                                replier_name: &str)
                                -> String {
     let replier_name_len = jks_len(&replier_name);
@@ -439,7 +432,6 @@ fn make_separator_replier_name(separator_width: usize,
 
 fn make_separator_time(separator_width: usize,
                        separator_padding: &str,
-                       time_max_width: usize,
                        time: &str)
                        -> String {
     let time_len = jks_len(&time);
@@ -473,22 +465,18 @@ fn make_separator_time(separator_width: usize,
 
 fn make_separator_top(separator_width: usize,
                       separator_padding: &str,
-                      replier_max_width: usize,
                       replier_name: &str,
-                      time_max_width: usize,
                       time: &str)
                       -> String {
 
     let separator_replier = make_separator_replier_name(separator_width,
                                                         &separator_padding,
-                                                        replier_max_width,
                                                         &replier_name);
 
     let separator_replier_width = jks_len(&separator_replier);
 
     let separator_time = make_separator_time(separator_width,
                                              &separator_padding,
-                                             time_max_width,
                                              &time);
 
     let separator_time_width = jks_len(&separator_time);
